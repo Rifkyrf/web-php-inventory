@@ -1,0 +1,120 @@
+/* PRO-INV Custom Styles */
+body { 
+    font-family: 'Inter', sans-serif; 
+    overflow-x: hidden; 
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6, .heading {
+    font-family: 'Sora', sans-serif;
+}
+
+.sub-heading {
+    font-family: 'Sora', sans-serif;
+    font-weight: 500;
+}
+
+p, span, div, .text-normal {
+    font-family: 'Inter', sans-serif;
+}
+
+.sidebar-closed { 
+    transform: translateX(-100%); 
+}
+
+@media (min-width: 768px) { 
+    .sidebar-closed { 
+        transform: translateX(0); 
+    } 
+}
+
+@media print {
+    .no-print, aside, button, nav { 
+        display: none !important; 
+    }
+    main { 
+        margin: 0 !important; 
+        padding: 0 !important; 
+        width: 100% !important; 
+    }
+    .bg-white { 
+        border: 1px solid #eee !important; 
+    }
+}
+
+/* Remove box-shadow from logos */
+img[src="logo.png"] {
+    box-shadow: none !important;
+}
+
+/* Smooth transitions */
+* {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Scale animation for modals */
+.scale-up-center {
+    animation: scale-up-center 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes scale-up-center {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Profile dropdown */
+#profileDropdown {
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    #sidebar {
+        height: calc(100vh - 4rem);
+        top: 4rem;
+    }
+    
+    button, a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    input, select, textarea {
+        font-size: 16px;
+    }
+}
